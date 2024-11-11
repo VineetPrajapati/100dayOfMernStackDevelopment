@@ -1,0 +1,143 @@
+<!-- Day 2: Work with headings, lists, tables, and form elements (<input>, <button>, <select>). -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 02</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend><h1>Headings</h1></legend>
+      <p>
+        There are basically 6 type of headings which are : - h1, h2, h3, h4, h5,
+        h6 (h1 is used for main heading and it goes upto h6 -- least important)
+      </p>
+      <h1>Main Headings</h1>
+      <h2>Subheading level 2</h2>
+      <h3>Subheading level 3</h3>
+      <h4>Subheading level 4</h4>
+      <h5>Subheading level 5</h5>
+      <h6>Subheading level 8</h6>
+    </fieldset>
+
+    <fieldset>
+      <legend><h1>Lists</h1></legend>
+      <p>
+        The lists are ol (order list (counting method are used) ) and ul
+        (unorder list (bullet lists) )
+      </p>
+
+      <h4>Order list :</h4>
+      <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ol>
+
+      <h4>Unorder list :</h4>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <legend><h1>Table</h1></legend>
+      <p>
+        table tag used in html for the designing of the table which used to
+        display the data in row and colums
+      </p>
+      <p>table tag contains tr(table row) th(table head) td(table data)</p>
+
+      <table>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Tested</th>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>$5</td>
+          <td>OK</td>
+        </tr>
+        <tr>
+          <td>Banana</td>
+          <td>$2</td>
+          <td>OK</td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <fieldset>
+      <legend><h1>Form</h1></legend>
+      <p>
+        form tag used to design the form such as login form || sign up form ||
+        description form
+      </p>
+      <p>
+        form contains multiple tag and attributes are :- label, input, options
+        submit, type, value, action, method etc
+      </p>
+
+      <form action="">
+        <label for="name">Name : </label>
+        <input type="text" />
+        <br />
+        <label for="email">Email : </label>
+        <input type="email" />
+        <br />
+
+        <!-- radio button -->
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" />
+        <label for="male">Male</label>
+        <input type="radio" name="gender" />
+        <label for="female">Female</label>
+        <input type="radio" name="gender" />
+        <label for="trans">Not to say</label>
+
+        <br />
+        <label for="hobbies">Hobbies : </label>
+        <input type="checkbox" />
+        <label for="reading">Reading</label>
+        <input type="checkbox" />
+        <label for="sports">Sports</label>
+        <input type="checkbox" />
+        <label for="travelling">Travelling</label>
+
+        <br />
+        <!-- select -->
+        <p>
+          <strong
+            >select takes option tag inside of the select tag which contains the
+            different option to select</strong
+          >
+        </p>
+        <label for="selectACar">Select a car : </label>
+        <select name="car" id="car">
+          <option value="volvo">Volvo</option>
+          <option value="audi">Audi</option>
+          <option value="bmw">BMW</option>
+          <option value="mercedes">Mercedes</option>
+          <option value="lusus">Luxus</option>
+        </select>
+
+        <br />
+        <br />
+        <!-- submit -->
+        <!-- type submit used to submit the form -->
+        <input type="submit" />
+
+        <h4>Button tag</h4>
+        <!-- button is a pre define tag in html which used design the functional button such as sign up || or login buttons -->
+        <button type="button">Click Me!</button>
+      </form>
+    </fieldset>
+  </body>
+</html>
