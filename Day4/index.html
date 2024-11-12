@@ -1,0 +1,169 @@
+<!-- Nov 13, 2024 -->
+<!-- Day 4: Learn about the CSS box model, display properties, and positioning (relative, absolute, fixed). -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Day 04</title>
+  </head>
+  <body>
+    <!-- box model -->
+    <fieldset>
+      <legend><strong>CSS Box Model</strong></legend>
+      <p>Box model contains :</p>
+      <ul>
+        <li>
+          <strong>Content : </strong>The area where text, image, or other
+          content is displayed
+        </li>
+        <li>
+          <strong>Padding : </strong>Space between the content and the border
+        </li>
+        <li>
+          <strong>Border : </strong>A line that wrap around the the padding and
+          content
+        </li>
+        <li>
+          <strong>Margin : </strong>Space outside the border, creating distance
+          between the element and element
+        </li>
+      </ul>
+
+      <div class="box">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae,
+          debitis est illo id tenetur recusandae, sequi perferendis error
+          voluptatibus hic facilis. Nostrum, qui ducimus numquam asperiores
+          explicabo fugiat aliquam nobis!
+        </p>
+      </div>
+    </fieldset>
+
+    <!-- display property -->
+    <fieldset>
+      <legend><strong>Display properties</strong></legend>
+      <p>
+        Display property in CSS specifies how an element is displayed. The most
+        common values are block, inline, inline-block, and none
+      </p>
+
+      <div class="display">
+        <div class="block">
+          I am a block element. I'll takes full width of conatiner
+        </div>
+        <div class="inline">I am a inline elem</div>
+        <div class="inline-block">
+          I am inline-block. Allowed to add width and height of the content but
+          i sit in line with other inline element
+        </div>
+      </div>
+      <div class="none">
+        I'm hidden. I'll be hidden in the web page and i also not take any space
+        on the page
+      </div>
+    </fieldset>
+
+    <!-- positioning -->
+    <fieldset>
+      <legend>
+        <strong> Positioning </strong>
+      </legend>
+
+      <p>
+        CSS positioning allows us to control the placement of element within a
+        webpage. There are five main position values static, relative, absolute,
+        fixed, and sticky
+      </p>
+      <p>position static is the default vlaue of all element</p>
+      <div class="container">
+        <div class="relative-box">
+          <p>
+            position relative to its normal position, slightly changes are
+            possible such as top, right, bottom, and left
+          </p>
+        </div>
+
+        <div class="absolute-box">
+          <p>
+            In absolute the positions the element relative to the nearest
+            positioned ancestor (i.e, any parent with position set to relative,
+            absolute, or fixed)
+          </p>
+        </div>
+
+        <div class="fixed-box">
+          <p>
+            fixed box it will appear always top of the screen, suitable for the
+            navbar
+          </p>
+        </div>
+      </div>
+    </fieldset>
+    <div class="sticky-box">
+      <p>
+        This is a sticky. Stick to the bottom, suitable the footer like
+        copyrights
+      </p>
+    </div>
+
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit pariatur
+      architecto laboriosam beatae a ipsum aliquam omnis mollitia minima esse
+      est repudiandae id veritatis necessitatibus quos nostrum explicabo, nihil
+      vel repellat magni, deserunt numquam dignissimos praesentium! Autem porro
+      natus voluptatibus, enim necessitatibus excepturi expedita tempore animi
+      est. Consequatur rem dicta est totam quaerat vero temporibus nihil
+      perferendis? Minus et voluptate asperiores voluptas ipsam natus, suscipit
+      ea, deserunt ipsum atque facere facilis ex assumenda culpa laudantium
+      earum aut quos voluptatibus modi temporibus hic? Possimus minus at
+      eveniet, earum praesentium dolore impedit vitae. Dolorum quae omnis,
+      quisquam culpa aperiam qui laudantium optio? Dicta repudiandae harum
+      adipisci iure blanditiis explicabo eius cupiditate fugit ullam dolorem.
+      Placeat consequuntur id in veniam magni? Id, nemo minus blanditiis, minima
+      error tempore quia voluptates voluptatibus libero voluptatum aliquam
+      dolorem at eum debitis nulla eaque tenetur! Quaerat in beatae at,
+      reiciendis repudiandae, est fugiat eaque assumenda cum natus aut error
+      quidem tempore repellendus a sapiente ab delectus libero dicta tempora
+      laudantium. Rerum consequuntur ab laboriosam? Similique officiis
+      recusandae quidem inventore non natus ad dolorum libero? Minima rerum
+      quidem, dignissimos numquam optio maiores veniam saepe? Sequi laborum,
+      odit autem fuga nulla animi beatae voluptatum, perferendis non numquam
+      cumque labore. Blanditiis sint at quo molestiae a aliquam consequatur,
+      alias voluptatibus, dolorum recusandae odit repellat iste tempore eos
+      obcaecati, vitae minima ducimus distinctio? Aut consequuntur libero ab?
+      Doloremque assumenda quasi mollitia commodi expedita. Cum quod suscipit
+      ducimus aperiam voluptas beatae dignissimos! Nobis necessitatibus repellat
+      eligendi. Aliquam tempore ducimus at, dicta exercitationem quia, quisquam
+      voluptate assumenda iusto alias recusandae necessitatibus quis illo
+      expedita saepe. Quidem soluta eius magni repellendus architecto, commodi
+      odio ex deleniti voluptas magnam placeat consectetur ducimus hic eos ab
+      est cupiditate eligendi aperiam quas velit? Id et fugiat excepturi alias
+      hic modi dolor quisquam odio, reiciendis temporibus cupiditate natus
+      maxime vero sunt optio perferendis debitis molestiae blanditiis quam
+      exercitationem, unde beatae libero dicta placeat. Consequuntur quis dolor
+      dolorem sint quidem cupiditate quasi! Laudantium quia nisi ex quas
+      praesentium quisquam, sunt impedit fugit magnam consectetur suscipit
+      ducimus sint earum inventore corrupti illum itaque? Velit, recusandae
+      voluptatibus ut nisi numquam vitae pariatur omnis blanditiis deleniti
+      itaque ipsa similique expedita? Incidunt iste tempore laboriosam aliquid
+      dignissimos quis ducimus sunt tempora quidem, ex officiis, impedit,
+      adipisci commodi possimus! Rem aut unde, eius eligendi illum quo, magni
+      itaque aliquid vitae quia ad. Eum sint quos eos vero reprehenderit
+      repudiandae doloremque aspernatur ab excepturi deserunt amet accusamus
+      assumenda corrupti cum obcaecati tempore officia aut, nam fugit fugiat
+      libero labore sequi et. Quae animi eveniet aspernatur asperiores illum
+      voluptas quo in voluptate ad nobis maiores, odio excepturi optio soluta
+      esse exercitationem dolore ipsum dicta. Qui vel aspernatur voluptas
+      aliquam alias minus explicabo iusto, exercitationem atque aperiam sapiente
+      odio similique fugiat, ullam libero provident obcaecati consectetur
+      quaerat sint neque reiciendis molestias? Tenetur magnam, quo totam ea
+      magni iste porro harum quidem ullam voluptatum provident, libero incidunt
+      quaerat nihil distinctio! Reiciendis quisquam suscipit voluptates.
+      Doloribus qui dignissimos sit eligendi harum ut. Blanditiis quibusdam sunt
+      ex hic est. Accusantium.
+    </p>
+    
+  </body>
+</html>
