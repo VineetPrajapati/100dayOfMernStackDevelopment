@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid3</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container{
+            background-color: #333;
+            width: 100%;
+            height: 100%;
+            border: 5px solid rgb(154, 144, 144);
+            padding: 4rem;
+            font-weight: bolder;
+            color: rgb(226, 213, 213);
+            display: grid;
+            gap: 5px;
+            grid-template-areas: 
+            "header header" 
+            "article text1" 
+            "article text2"
+            "main main"
+            "footer footer";
+        }
+        .header{
+            background-color: brown;
+            grid-area: header;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .article{
+            background-color: cadetblue;
+            grid-area: article;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .text1{
+            background-color: rgb(19, 33, 33);
+            grid-area: text1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text2{
+            background-color: chartreuse;
+            grid-area: text2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            background-color: chocolate;
+            grid-area: main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer{
+            background-color: rgb(140, 114, 114);
+            grid-area: footer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="article">Article</div>
+        <div class="text1">Text 1</div>
+        <div class="text2">Text 2</div>
+        <div class="main">Main</div>
+        <div class="footer">Footer</div>
+    </div>
+    
+</body>
+</html>
