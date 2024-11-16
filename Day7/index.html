@@ -1,0 +1,106 @@
+<!-- Nov 16, 2024 -->
+<!-- Day 7: Learn CSS selectors and pseudo-classes (:hover, :nth-child, etc.). -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day07</title>
+    <style>
+        .item{
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 5px;
+        }
+        .item:hover{
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .item:nth-child(3){
+            background-color: lightblue;
+            font-weight: bold;
+        }
+        .item:first-child{
+            border-color: red;
+        }
+        .item:last-child{
+            border-color: green;
+        }
+
+        .item:not(.special){
+            color: gray;
+        }
+    </style>
+  </head>
+  <body>
+    <fieldset>
+      <legend><strong>CSS Selectors</strong></legend>
+      <ol>
+        <p>
+          <strong> <u>Basic Selectors</u> : </strong>
+        </p>
+        <li><strong>Universal Selector : (*)</strong></li>
+        <li>
+          <strong
+            >Type Selector : directly tag will selected (e.g, p a, h1,
+            etc)</strong
+          >
+        </li>
+        <li><strong>Class Selector : (.classname)</strong></li>
+        <li><strong>ID Selector : (#id)</strong></li>
+        <li>
+          <strong
+            >Group Selector : multiple tag, class, or id selected using "," (A,
+            B)</strong
+          >
+        </li>
+        <li>
+          <strong
+            >Descendant Selector : selets all elements "B" inside "A" (A
+            B)</strong
+          >
+        </li>
+        <li>
+          <strong
+            >Child Selector : selects all child element "B" indide "A"
+            (A>B)</strong
+          >
+        </li>
+        <li>
+          <strong
+            >Adjacent Sibling Selector : selects the next sibling "B "A"
+            (A+B)</strong
+          >
+        </li>
+        <li>
+          <strong
+            >General Sibling Selector : selects all siblings (A ~ B)</strong
+          >
+        </li>
+      </ol>
+    </fieldset>
+
+    <fieldset>
+      <legend><strong>CSS pseudo-classes</strong></legend>
+      <p>
+        pseudo-classes target elements based on their state, position, or user
+        interaction. They are weitten with a colon (:) before the keyword
+      </p>
+      <ol>
+        <li><strong>:hover :- Applies styles when the user hovers over an element.</strong></li>
+        <li><strong>:focus :- Styles an element when it gains focus (e.g., clicking or tabbing into an input field)</strong></li>
+        <li><strong>:nth-child(n) :- Targets the nth of a parent.</strong></li>
+        <li><strong>:first-child and :last-child :- Targets the first and last children of a parent.</strong></li>
+        <li><strong>:not(selector) :- Exclude elements that match the selector.</strong></li>
+      </ol>
+    </fieldset>
+
+    <ul class="item-list">
+        <li class="item">Item1</li>
+        <li class="item">Item2</li>
+        <li class="item special">Item3</li>
+        <li class="item">Item4</li>
+        <li class="item">Item5</li>
+    </ul>
+  </body>
+</html>
