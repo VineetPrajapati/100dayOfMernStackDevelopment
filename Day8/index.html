@@ -1,0 +1,130 @@
+<!-- Nov 17, 2024 -->
+<!-- Day 8: Responsive design basics with media queries. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day08</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 2px solid green;
+        border-collapse: collapse;
+        padding: 2px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .box{
+        background-color: lightblue;
+        padding: 20px;
+        text-align: center;
+        border: 2px solid #ccc;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+      @media (min-width: 576px) {
+        .container{
+            grid-template-columns: repeat(2, 1fr);
+        }        
+      }
+      @media (min-width: 992px) {
+        .container{
+            grid-template-columns: repeat(4, 1fr);
+        }        
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Responsive desig ensures that web pages looks good and are usable on
+      devices of all screen sizes, including desktops, tablests, and mobile
+      phones.
+    </p>
+
+    <ul>
+      <h4>Techniques for responsive desig include :</h4>
+      <li>
+        Flexible layouts using percentages or relative units (e.g., em, rem, %)
+      </li>
+      <li>Responsive images that scales with their container</li>
+      <li>
+        CSS media queries to apply styles conditionally based on the viewport
+        size.
+      </li>
+    </ul>
+
+    <fieldset>
+      <legend><h4>Media Queries</h4></legend>
+      <p>
+        Media queries are a CSS features that allows us to apply styles
+        conditionally bassed on the properties of the uses's devices, such as
+        size, resolution, or orientation.
+      </p>
+
+      <h4>Common Media Query Breakpoints</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Device Type</th>
+            <th>Breakpoints</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Extra Small (Mobile)</td>
+            <td>0px - 575px</td>
+          </tr>
+          <tr>
+            <td>Small (Tablet)</td>
+            <td>576px - 767px</td>
+          </tr>
+          <tr>
+            <td>Medium (Small Laptop)</td>
+            <td>768px - 991px</td>
+          </tr>
+          <tr>
+            <td>Large (Desktop)</td>
+            <td>992px - 1199px</td>
+          </tr>
+          <tr>
+            <td>Extra Large (Wide Desktop)</td>
+            <td>1200px and above</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Types of Media Queries</h4>
+      <ol>
+        <li>Width-Based Queries : Apply styles based on the screen width.</li>
+        <li>
+          Orientation-Based Queries : Apply styles based orientation (portrait
+          or landscape).
+        </li>
+        <li>
+          Resolution-Based Queries : Target devices based on their screen
+          resolution
+        </li>
+      </ol>
+    </fieldset>
+
+    <fieldset>
+        <legend><h4>Responsive Layout 1</h4></legend>
+        <div class="container">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 4</div>
+          </div>
+    </fieldset>
+
+  </body>
+</html>
