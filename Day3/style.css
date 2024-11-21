@@ -1,3 +1,9 @@
+*{
+    background-color: #a9a4a3;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
 h1{
     color: green;
     font-weight: bolder;
@@ -9,4 +15,9 @@ h1{
     font-family: Arial, Helvetica, sans-serif;
     background-color: grey;
     line-height: 1.5;
+}
+
+span{
+    color: green;
+    font-weight: bold;
 }

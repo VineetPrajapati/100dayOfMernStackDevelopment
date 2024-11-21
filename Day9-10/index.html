@@ -1,0 +1,185 @@
+<!-- Nov 18, 2024 and Nov 19, 2024 -->
+<!-- Day 9-10: Mini Project – Build a personal portfolio page using HTML and CSS. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mini - project</title>
+    <style>
+      /* General Styles */
+      body {
+        font-size: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+        color: #333;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      button a {
+        color: white;
+      }
+
+      /* Header */
+      .header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        position: static;
+        top: 0;
+        z-index: 1000;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+      .navbar a {
+        color: white;
+        text-transform: uppercase;
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+
+      /* hero */
+      .hero {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: lightblue;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero button {
+        background: #333;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .hero button:hover {
+        background: #555;
+      }
+
+      /* about section */
+      .about {
+        padding: 50px 20px;
+        background: #f4f4f4;
+        text-align: center;
+      }
+      .skill {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        list-style: none;
+        padding: 0;
+      }
+
+      /* contact */
+      .contact{
+        padding: 50px 20px;
+        background: #f4f4f4;
+      }
+
+      .contact form{
+        max-width: 400px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .contact form input, .contact form textarea{
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .contact form button{
+        background: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .contact form button:hover{
+        background: #555;
+      }
+
+      /* footer */
+      footer {
+        text-align: center;
+        padding: 10px 0;
+        background: #333;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="navbar">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section id="hero" class="hero">
+      <h1>Hi, I'm Vineet Prajapati</h1>
+      <p>Aspiring Web Developer</p>
+      <button><a href="#projects">View My Work</a></button>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>
+        I'm passionate about building interactive, responsive, and user-friendly
+        website.
+      </p>
+      <ul class="skill">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+      </ul>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Name :</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message :</label>
+        <textarea name="message" id="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <p>&copy; 2024 Vineet Prajapati. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
