@@ -1,0 +1,93 @@
+<!-- Nov 25, 2024 -->
+<!-- Day 16: Event handling basics in JavaScript (click events, input events). -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 16</title>
+  </head>
+  <body style="background-color: grey">
+    <h1>
+      Day 16: Event handling basics in JavaScript (click events, input events).
+    </h1>
+    <p>
+      JavaScript "events" allow us to make our web pages interactive by
+      responding to user actions like "click", "typing", "scrolling", and more.
+      Today, we will focus onl click events, input events, and how to use them
+      effectively
+    </p>
+
+    <h4>1. What Are Events?</h4>
+    <p>Events represent user interactions or browser actions, such as:</p>
+    <ul>
+      <li>Clicking a button</li>
+      <li>Typing in a text field</li>
+      <li>Hovering over an element</li>
+      <li>Loading a webpage</li>
+    </ul>
+    <p>
+      <strong>Event handling</strong> refers to the process of responding to
+      these events
+    </p>
+    <h4>2. Adding Event Listeners</h4>
+    <p>
+      To handle events in JavaScript, we have to attach an event Listeners to an
+      HTML element. When the event occurs, the listener executes a callback
+      function.
+    </p>
+
+    <button id="btn">Click Me!</button>
+    <p id="text">Hello!</p>
+
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <p id="greeting">Hello, Guest!</p>
+    <button id="clearButton">Clear</button>
+
+    <h4>Prevent Default Behavior</h4>
+    <p>
+      Some events jhave default vehaviours(e.g., Clicking a link navigates to a
+      URL). We can prevent this behavior using "event.preventDefault()"
+    </p>
+
+    <form id="myForm">
+      <input type="text" placeholder="type something" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+      const btn = document.getElementById("btn");
+      const text = document.getElementById("text");
+
+      // When the button is clicked, the text of the <p> tag is updated.
+      btn.addEventListener("click", () => {
+        text.textContent = "You clicked the button!";
+      });
+
+      // Handling Input Events : An input event occurs when the value of an input field changes. This is usefull for real-time updates.
+
+      const input = document.getElementById("nameInput");
+      const greeting = document.getElementById("greeting");
+      const clearBtn = document.getElementById("clearButton");
+
+      //   As we type in the input field, the greeting updates in real-time.
+      input.addEventListener("input", () => {
+        greeting.textContent = `Hello, ${input.value || "Guest"}!`;
+        clearBtn.addEventListener("click", () => {
+          input.value = "";
+          greeting.textContent = "Hello, Guest!";
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        console.log(`you pressed: ${event.key}`);
+      });
+
+      const form = document.getElementById(myForm);
+      form.addEventListener("submit", (event) => {
+        event.preventDefault(); // prevent page reload
+        alert("Form submission prevented!");
+      });
+    </script>
+  </body>
+</html>
