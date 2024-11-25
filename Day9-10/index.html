@@ -90,24 +90,25 @@
       }
 
       /* contact */
-      .contact{
+      .contact {
         padding: 50px 20px;
         background: #f4f4f4;
       }
 
-      .contact form{
+      .contact form {
         max-width: 400px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         gap: 10px;
       }
-      .contact form input, .contact form textarea{
+      .contact form input,
+      .contact form textarea {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
       }
-      .contact form button{
+      .contact form button {
         background: #333;
         color: #fff;
         padding: 10px 20px;
@@ -115,8 +116,35 @@
         border-radius: 5px;
         cursor: pointer;
       }
-      .contact form button:hover{
+      .contact form button:hover {
         background: #555;
+      }
+
+      /*Projects Section*/
+      .projects {
+        padding: 50px 20px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-card img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
       }
 
       /* footer */
@@ -125,6 +153,34 @@
         padding: 10px 0;
         background: #333;
         color: #fff;
+      }
+
+      /* Media Query*/
+      /* Tablet Devices */
+      @media (min-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .projects {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .skills {
+          justify-content: center;
+          gap: 30px;
+        }
+      }
+
+      /* Desktop Devices */
+      @media (min-width: 1024px) {
+        .hero h1 {
+          font-size: 3rem;
+        }
+
+        .projects {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     </style>
   </head>
@@ -158,6 +214,21 @@
         <li>CSS</li>
         <li>JavaScript</li>
       </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <h2>My Projects</h2>
+      <div class="project-card">
+        <img src="https://picsum.photos/320/360" alt="Project 1" />
+        <h3>Project 1</h3>
+        <p>Description of the project goes here.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://picsum.photos/320/360" alt="Project 2" />
+        <h3>Project 2</h3>
+        <p>Description of the project goes here.</p>
+      </div>
     </section>
 
     <!-- Contact section -->
