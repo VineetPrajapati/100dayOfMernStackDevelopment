@@ -1,0 +1,132 @@
+<!-- Nov 26, 2024 -->
+<!-- Day 17: Practice with basic animations in JavaScript. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>day 17</title>
+  </head>
+  <body>
+    <h1>Day 17: Practice with basic animations in JavaScript.</h1>
+    <p>Animation makes web pages more interactive and visually appealing. JavaScript provides powerful ways to ceate animations, allowing dynamic control over movement, transitions, and effects on your web elements.</p>
+
+    <p>1. Animations involve changing the properties of an element (like position, size, color, or opacity) over time. This can be done using.
+
+        <ul>
+            <li>The "setInterval()" or "setTimeout() methods."</li>
+            <li>The requestAnimationFrame() method (preferred for smoth animations.)</li>
+        </ul>
+    </p>
+    <p>2. Core Concept of Animations
+        <p><strong>CSS properties to Animation</strong></p>
+        <p>You can animate any property that changes the appearance of an element, such as:
+            <ul>
+                <li>Position: top, left, transform.</li>
+                <li>Size: width, height</li>
+                <li>Visibility: opacity</li>
+                <li>Color: background-color, color</li>
+            </ul>
+        </p>
+        <p><strong>Timing</strong> Animations involve gradual changes, typically occurring over a specified duration, This requires repeatedly updating a property at small intervals.</p>
+    </p>
+
+    <div id="box"></div>
+    <div id="container"></div>
+    <div id="fade_in_out" style="width: 100px; height: 100px; background-color: blue; opacity: 0;"></div>
+    <canvas id="canvas" width="400px" height="300px" style="border: 1px solid black;"></canvas>
+
+    <script>
+        // Animating with setInterval()
+        const box = document.getElementById("box");
+        box.style.width="100px";
+        box.style.height="100px";
+        box.style.background="red";
+        box.style.position="absolute";
+        box.style.top="50px";
+        box.style.left="0";
+
+        let position = 0;
+
+        const moveRight = setInterval(() => {
+            if(position >= 300){
+                clearInterval(moveRight); //stop animation when reaching the limit
+            } else{
+                position += 5;
+                box.style.left = position + "px"
+            }
+            
+        }, 50);
+
+        // Animating with requestAnimationFrame()
+
+        const container = document.getElementById("container");
+        container.style.width="50px";
+        container.style.height="50px";
+        container.style.background="green";
+        container.style.position="absolute";
+        container.style.top="50px";
+        container.style.left="0";
+
+        function moveBox() {
+             if (position < 300) {
+              position += 5;
+              container.style.left = position + "px";
+              requestAnimationFrame(moveBox); //Call the function again
+           }
+        }
+        requestAnimationFrame(moveBox);
+
+        const fade =  document.getElementById("fade_in_out");
+        let opacity = 0;
+
+        function fadeIn(){
+            if(opacity<1){
+                opacity += 0.02;
+                fade.style.opacity = opacity;
+                requestAnimationFrame(fadeIn)
+            }
+        }
+
+        function fadeOut(){
+            if(opacity>0){
+                opacity -= 0.01;
+                fade.style.opacity = opacity;
+                requestAnimationFrame(fadeOut);
+            }
+        }
+        fadeIn();
+        fadeOut();
+
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        let x = 50;
+        let y = 50;
+        let dx = 2;
+        let dy = 2;
+        const radius = 20;
+
+        function drawBall() {
+           ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+           ctx.beginPath();
+           ctx.arc(x, y, radius, 0, Math.PI * 2);
+           ctx.fillStyle = "green";
+           ctx.fill();
+           ctx.closePath();
+
+           x += dx;
+           y += dy;
+
+           // Bounce off walls
+           if (x + radius > canvas.width || x - radius < 0) dx = -dx;
+           if (y + radius > canvas.height || y - radius < 0) dy = -dy;
+
+           requestAnimationFrame(drawBall);
+        }
+
+        drawBall();
+    </script>
+
+  </body>
+</html>
