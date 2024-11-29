@@ -1,3 +1,5 @@
+// Nov 30, 2024
+// Day 21: Set up a React environment, understand JSX, and create your first component.
 import Welcome from "./components/Welcome"
 const App = () => {
   return (
