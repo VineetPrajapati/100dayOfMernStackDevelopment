@@ -1,0 +1,31 @@
+.container{
+    background: gray;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    background-color: #fff;
+    padding: 5px;
+    width: 300px;
+    border-radius: 5px;
+    flex-direction: row;
+}
+.picture{
+    display: flex;
+    justify-content: center;
+}
+.picture img{
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.content{
+    padding: 5px;
+    text-align: justify;
+}
+
