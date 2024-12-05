@@ -1,0 +1,25 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+}
+.list{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+}
+ul{
+  list-style: none;
+}
+
+li{
+  text-align: left;
+  padding: 10px;
+}
+
