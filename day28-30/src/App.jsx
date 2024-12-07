@@ -8,6 +8,9 @@ const App = () => {
     <div>
       <Navbar />
       <Outlet />
+      <footer className="container mx-auto p-4 text-center">
+        <p className="text-gray-600 text-xl">© simple blog app</p>
+      </footer>
     </div>
     
   );

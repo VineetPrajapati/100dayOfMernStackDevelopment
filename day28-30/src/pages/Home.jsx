@@ -34,12 +34,12 @@ const Home = () => {
         {posts.map((post) => (
           <li
             key={post.id}
-            className="bg-gray-100 p-4 rounded shadow hover:shadow-lg"
+            className="bg-gray-100 p-4 rounded shadow hover:shadow-lg flex flex-col justify-center"
           >
-            <img src={post.thumbnailUrl} alt={post.title} />
+            <img src={post.thumbnailUrl} alt={post.title} className="rounded" />
             <Link
               to={`/post/${post.id}`}
-              className="text-blue-500 text-2xl hover:underline"
+              className="text-blue-500 py-4 text-2xl hover:underline"
             >
               {post.title}
             </Link>
