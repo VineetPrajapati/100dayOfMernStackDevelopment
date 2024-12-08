@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ThemeContext from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -12,7 +12,7 @@ const Navbar = () => {
       <h1>My Application</h1>
       <button
         onClick={toggleTheme}
-        className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        className="px-4 py-2 mt-2 bg-blue-500 text-white rounded hover:bg-blue-600"
       >
         Toggle Theme
       </button>
