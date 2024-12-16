@@ -7,6 +7,8 @@ const PostDetail = () => {
   const { getPostById, loading, error } = useContext(BlogContext);
   const post = getPostById(id);
 
+  const ransomImages = `https://picsum.photos/600/400?random=${post.id}`;
+
   if (loading) {
     return (
       <div className="flex items-center justify-center h-screen bg-blue-100">
@@ -33,6 +35,8 @@ const PostDetail = () => {
     <div className="bg-gray-200 min-h-screen py-6">
       <div className="container mx-auto mt-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto bg-gradient-to-br from-blue-50 to-blue-100 shadow-xl rounded-lg p-6 md:p-8">
+
+          <img src={ransomImages} alt={`Post ${post.id}`} className="w-full h-64 object-cover rounded-lg mb-6" />
           <h2 className="text-4xl font-extrabold text-gray-700 mb-4">
             {post.title}
           </h2>
