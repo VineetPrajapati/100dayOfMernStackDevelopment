@@ -30,7 +30,7 @@ const BlogProvider = ({ children }) => {
   }, []);
 
   const addPost = (newpost) =>
-    setPosts([...posts, { id: posts.length + 1, ...newpost }]);
+    setPosts([{ id: posts.length + 1, ...newpost }, ...posts]);
 
   const getPostById = (id) => posts.find((post) => post.id === Number(id));
 
