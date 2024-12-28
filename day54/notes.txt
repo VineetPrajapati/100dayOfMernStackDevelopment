@@ -1,0 +1,19 @@
+Jan 02, 2025
+Day 54: Work on request validation with middleware.
+
+1.Middleware is a function that has access that req, and res onjects, and the next() function.
+-> exectute any code
+-> modify the req and res objects
+-> end request-response cycle
+-> call the next middleware in the stack
+
+2.Why is Request Validation Important
+-> Prevent Invalid Data
+-> Improves Security
+-> Enhances User Experience
+
+Best Practices
+1.Keep Middleware Modular: Create separate files for reusable middleware.
+2.Use Libraries: Libraries like Joi or express-validator make validation robust and less error-prone.
+3.Provide Meaningful Error Messages: Help users understand what went wrong with their input.
+4.Validate Both Client and Server-Side: Client-side validation improves UX, while server-side validation ensures security.
