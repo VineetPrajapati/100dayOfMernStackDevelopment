@@ -1,0 +1,30 @@
+
+1735584088477: ::1 GET: /
+
+1735584099713: ::1 GET: /user
+
+1735584120922: ::1 GET: /api/user
+
+1735584316204: ::1 POST: /api/user
+
+1735584431267: ::1 POST: /api/user
+
+1735584443837: ::1 POST: /api/user
+
+1735584448868: ::1 GET: /api/user
+
+1735584560783: ::1 GET: /api/user/6772eabb75f48ead7a4f8232
+
+1735584586022: ::1 DELETE: /api/user/6772eabb75f48ead7a4f8232
+
+1735584592133: ::1 GET: /api/user
+
+1735584597001: ::1 GET: /api/user/6772eabb75f48ead7a4f8232
+
+1735584655144: ::1 GET: /protected
+
+1735584658315: ::1 GET: /
+
+1735584662730: ::1 GET: /api/users
+
+1735584665203: ::1 GET: /api/user
