@@ -1,0 +1,29 @@
+Jan 11, 2025
+Day 63: Introduction to MongoDB queries and filters.
+
+-- Queries --
+1. find()
+2. $eq	Matches values that are equal	{ age: { $eq: 25 } }
+3. $ne	Matches values not equal	{ age: { $ne: 25 } }
+4. $gt	Matches values greater than	{ age: { $gt: 18 } }
+5. $gte	Matches values greater or equal	{ age: { $gte: 18 } }
+6. $lt	Matches values less than	{ age: { $lt: 18 } }
+7. $lte	Matches values less or equal	{ age: { $lte: 18 } }
+
+-- Logical Operators
+1. $and	Matches all conditions	{ $and: [{ age: { $gt: 18 } }, { city: "NYC" }] }
+2. $or	Matches at least one condition	{ $or: [{ age: { $lt: 18 } }, { city: "NYC" }] }
+3. $not	Negates a condition	{ age: { $not: { $gt: 18 } } }
+4. $nor	Matches documents that fail all conditions	{ $nor: [{ age: { $lt: 18 } }, { city: "NYC" }] }
+
+-- Element Query Operators
+1. $exists	Checks if a field exists	{ age: { $exists: true } }
+2. $type	Matches fields of a specific BSON type	{ age: { $type: "int" } }
+
+-- Sort Methods
+1. db._.find().sort({__: 1})   //Accending Order where _ = collection name and __ specific (eg, number)
+2. db._.find().sort({__: -1})  //Descending Order
+
+-- Limiting and skipping Results
+1. db._.find().limit(5).skip(2)
+// Return 5 documents after skipping the first 2.
