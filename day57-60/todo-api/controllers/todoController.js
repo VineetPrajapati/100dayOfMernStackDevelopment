@@ -11,16 +11,15 @@ exports.getTodos = async (req, res) => {
 
 exports.addTodo = async (req, res) => {
   const { task } = req.body;
-
   try {
-    const newTodo = new Todo({
+    const todo = new Todo({
       userId: req.userId,
       task,
     });
-    await newTodo.save();
-    res.status(201).json(newTodo);
-  } catch (error) {
-    res.status(500).json({ error: "Failed to add task" });
+    await todo.save();
+    res.status(201).json(todo);
+  } catch (err) {
+    res.status(500).json({ error: "Failed to add todo" });
   }
 };
 
@@ -29,7 +28,11 @@ exports.updateTodo = async (req, res) => {
   const { task, completed } = req.body;
 
   try {
-    const updatedTodo = await Todo.findByIdAndUpdate(id, { task, completed }, { new: true });
+    const updatedTodo = await Todo.findByIdAndUpdate(
+      id,
+      { task, completed },
+      { new: true }
+    );
     res.json(updatedTodo);
   } catch (error) {
     res.status(500).json({ error: "Failed to update task" });
