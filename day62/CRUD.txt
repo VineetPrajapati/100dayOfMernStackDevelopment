@@ -1,0 +1,9 @@
+Jan 10, 2025
+Day 62: Learn basic CRUD operations in MongoDB (insert, update, delete, read).
+
+@ Learned CRUD operation methods
+
+$set -> update or adds fields
+$inc -> increment a value
+$gt, $lt -> comparison(greator/less than)
+$and, $or -> Logical operations
