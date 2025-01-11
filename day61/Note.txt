@@ -1,0 +1,23 @@
+Jan 09, 2025
+Day 61: Set up MongoDB and create your first database and collection.
+
+
+1. Installation of MongoDB Shell
+2. Connection of the MongoDB using the connection string "mongodb://localhost:27017" 
+3. Creation of database using the command "use 'database name'"
+4. Learned different commands to use MongoDB Shell
+
+{
+    1. use myDatabase
+    2. db.myCollection.insertOne({ name: "John Doe", age: 25 })
+    db.myCollection.insertMany([
+      { name: "Bob", age: 40 },
+      { name: "Charlie", age: 35 }
+    ])
+    3. db.myCollection.find()
+    4. db.myCollection.find({ age: { $gt: 30 } })
+    5. db.myCollection.updateOne({ name: "Alice" }, { $set: { age: 31 } })
+    6. db.myCollection.updateMany({ age: { $gt: 30 } }, { $set: { active: true } })
+    7. db.myCollection.deleteOne({ name: "Alice" })
+    8. db.myCollection.deleteMany({ age: { $gt: 30 } })
+}
