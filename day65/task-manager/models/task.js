@@ -1,4 +1,4 @@
-// Jan 12, 2025
+// Jan 13, 2025
 // Day 65: Set up Mongoose, create schemas and models.
 
 const mongoose = require("mongoose");
