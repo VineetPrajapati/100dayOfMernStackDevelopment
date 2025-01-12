@@ -1,3 +1,6 @@
+// Jan 12, 2025
+// Day 65: Set up Mongoose, create schemas and models.
+
 const mongoose = require("mongoose");
 
 const taskSchema = new mongoose.Schema({
