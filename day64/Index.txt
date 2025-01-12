@@ -1,0 +1,53 @@
+Jan 12, 2025
+Day 64: Learn about indexes and how they work.
+
+-->> Indexes in MongoDB are special data structures that improve the efficiency of query operations by reducing the amount of data MongoDB needs to process. They enable faster retrieval of documents and are particularly important for large datasets. Understanding how indexes work can significantly improve database performance.
+
+-->>
+1. What Are Indexes?
+Indexes store a small portion of the collection's data in an easily searchable format. When a query is executed, MongoDB uses the index (if available) to quickly locate the data instead of scanning the entire collection.
+
+-->>
+2. Why Use Indexes?
+-> Faster Query Performance: Queries that search for specific fields or sort results can  use indexes to execute faster.
+-> Optimized Sorting: Indexes enable efficient sorting of documents.
+-> Reduced Resource Usage: Indexes minimize the amount of data MongoDB processes for a query.
+
+-->>
+3. Types of Indexes in MongoDB
+a. Single Field Index
+-> Indexes a single field in a document.
+-> Default Index: MongoDB automatically creates a unique _id index for every collection.
+db.collection.createIndex({ fieldName: 1 }) // Ascending order
+db.collection.createIndex({ fieldName: -1 }) // Descending order
+
+b. Compound Index
+-> Indexes multiple fields in a single index.
+db.collection.createIndex({ field1: 1, field2: -1 })
+-> Supports queries that use either field1 or both field1 and field2.
+
+c. Multi-Key Index
+-> Indexes array fields. Each element of the array is indexed as a separate key.
+db.collection.createIndex({ tags: 1 })
+
+d. Text Index
+-> Enables text search for strings.
+db.collection.createIndex({ description: "text" })
+
+e. Geospatial Index
+-> Supports queries for geospatial data, such as coordinates.
+db.collection.createIndex({ location: "2dsphere" })
+
+f. Unique Index
+-> Ensures that all values in the indexed field are unique.
+db.collection.createIndex({ email: 1 }, { unique: true })
+
+g. TTL (Time-to-Live) Index
+-> Automatically removes documents after a specified period.
+db.collection.createIndex({ createdAt: 1 }, { expireAfterSeconds: 3600 })
+
+-->>
+6. Impact of Indexes
+While indexes improve query performance, they also have some trade-offs:
+-> Storage Overhead: Indexes consume additional disk space.
+-> Write Performance: Indexes slow down insert, update, and delete operations because MongoDB must update the index whenever a document changes.
