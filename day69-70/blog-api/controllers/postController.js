@@ -20,6 +20,11 @@ exports.getPostById = async (req, res) => {
   }
 };
 
+// add post
+exports.addPost = (req, res) => {
+  res.render("addPost");
+};
+
 // create new post
 exports.createPost = async (req, res) => {
   try {
