@@ -36,7 +36,20 @@ exports.createPost = async (req, res) => {
   }
 };
 
-// edit post
+exports.editPostPage = async (req, res) => {
+  try {
+    const postId = req.params.id;
+    const post = await Post.findById(postId);
+    if (!post) {
+      return res.status(404).send(`Post not found`);
+    }
+    res.render("editPost", { post });
+  } catch (err) {
+    res.status(500).send(`Server error`);
+  }
+};
+
+// update post
 exports.updatePost = async (req, res) => {
   try {
     const { title, content } = req.body;
