@@ -1,0 +1,44 @@
+Jan 19, 2025
+Day 71: Advanced Mongoose queries (aggregation).
+
+# Mongoose's aggregation framework allows for advanced data manipulation and transformation by processing multiple documents and returning computed results. Aggregations are similar to SQL queries but are used to perform complex operations on MongoDB collections.
+
+# What is Aggregation?
+-->> Aggregation is a way to process a large number of documents in a collection by passing them through stages in a pipeline. Each stage performs an operation, such as filtering, grouping, sorting, or projecting.
+-->> The pipeline consists of multiple stages, and the output of one stage becomes the input for the next.
+
+# Common Aggregation Pipeline Stages
+1. $match : - Filters documents based on a condition (similar to find).
+{ $match: { status: "active" } }
+
+2. $group : - Groups documents by a specified field and performs aggregation functions (e.g., sum, avg, count).
+{ $group: { _id: "$category", total: { $sum: 1 } } }
+
+3. $sort : - Sorts the documents by a specific field.
+{ $sort: { createdAt: -1 } }
+
+4. $project : - Shapes the output by including or excluding fields.
+{ $project: { name: 1, age: 1, _id: 0 } }
+
+5. $limit : -  { $project: { name: 1, age: 1, _id: 0 } }
+{ $project: { name: 1, age: 1, _id: 0 } }
+
+6. $skip : - Skips a specified number of documents.
+{ $skip: 5 }
+
+7. $lookup : - Perform a left outer join with another collection.
+{
+  $lookup: {
+    from: "comments",
+    localField: "_id",
+    foreignField: "postId",
+    as: "comments"
+  }
+}
+
+8. $unwind : - Deconstructs an array field into separate documents.
+{ $unwind: "$tags" }
+
+
+<--------------------------------------------------------------------------------------------------------------->
+
