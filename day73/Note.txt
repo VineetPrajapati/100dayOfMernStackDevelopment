@@ -1,0 +1,30 @@
+Jan 21, 2025
+Day 73: Learn to handle transactions in MongoDB.
+
+## What Are Transactions?
+--> Atomicity: Either all operations in the transaction are completed successfully, or none of them are applied.
+--> Multi-document Transactions: Transactions can involve multiple documents in one or more collections.
+--> ACID Compliance: Transactions adhere to ACID (Atomicity, Consistency, Isolation, Durability) properties.
+
+## Key Concepts
+1. Session: Transactions are executed within a session.
+2. Commit: Apply all operations of a transaction.
+3. Abort: Roll back all changes made during the transaction.
+4. Replica Set Requirement: Transactions are supported on replica sets and sharded clusters only.
+
+## Step-by-Step Guide to Transactions
+1. Set Up a Replica Set
+    mongod --replSet rs0
+2. initiate the replica set in the mongo shell
+   rs.initiate()
+3. Start a Session and a Transaction
+   db.getMongo().startSession().startTransaction();
+4. Perfrom operations in the transaction
+
+## Common Errors and Troubleshooting
+1. Error: Transaction numbers are only allowed on a replica set member or mongos.
+   >> Solution: Ensure MongoDB is running as a replica set.
+2. Error: WriteConflict
+   >> Solution: Retry the transaction.
+3. Error: Read or write not permitted in a transaction.
+   >>Solution: Avoid operations not supported in transactions (e.g., creating indexes).
