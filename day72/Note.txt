@@ -1,0 +1,4 @@
+Jan 20, 2025
+Day 72: Practice using aggregations for complex queries.
+
+# Practiced in MongoDB Compass
