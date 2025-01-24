@@ -33,7 +33,7 @@ exports.createBlog = async (req, res, next) => {
 };
 
 // get single blog post
-exports.getBlogById = async (res, res, next) => {
+exports.getBlogById = async (req, res, next) => {
   try {
     const blog = await Blog.findById(req.params.id);
     if (!blog) {

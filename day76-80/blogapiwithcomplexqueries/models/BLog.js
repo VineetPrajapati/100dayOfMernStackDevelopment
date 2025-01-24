@@ -17,7 +17,7 @@ const BlogSchema = new mongoose.Schema(
     tags: [String],
     createdAt: {
       type: Date,
-      required: Date.now,
+      Date: Date.now,
     },
   },
   { timestamps: true }
