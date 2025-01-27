@@ -1,32 +1,27 @@
 const express = require("express");
+// const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const dotenv = require("dotenv");
-const connectDB = require("./config/db");
 
+const connectDB = require("./config/db");
 const blogRoutes = require("./routes/blogRoutes");
+
+dotenv.config();
 
 // express app
 const app = express();
 
-// dotenv configuration
-dotenv.config();
-
-// db connection
-connectDB();
-
 // middleware
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => res.send(`Welcome to blog-api`));
-app.use("/api/blogs", blogRoutes);
+// mongodb connection
+connectDB();
 
-// error handling middleware
-app.use((err, req, res, next) => {
-  res.status(err.status || 500).json({
-    success: false,
-    message: err.message,
-  });
-});
+// routes
+app.use("/blogs", blogRoutes);
 
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`));
+// start server
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () =>
+  console.log(`Server connected successfully on port:${PORT}`)
+);

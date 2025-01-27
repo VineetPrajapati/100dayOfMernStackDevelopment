@@ -1,71 +1,80 @@
-const Blog = require("../models/BLog");
+const mongoose = require("mongoose");
+const Blog = require("../models/Blog");
 
-// feth all data
-exports.getBlogs = async (req, res, next) => {
+// create post
+exports.createBlog = async (req, res) => {
   try {
-    const { page = 1, limit = 5, sort = "createdAt" } = req.query;
-    const blogs = await Blog.find()
+    const blog = new Blog(req.body);
+    await blog.save();
+    res.status(201).json({ success: true, date: blog });
+  } catch (err) {
+    res.status(500).json({ success: false, message: err.message });
+  }
+};
+
+// sort, filtering and pagination
+exports.getBlogs = async (req, res) => {
+  try {
+    const { page = 1, limit = 10, sort = "createdAt", tags } = req.query;
+    const query = tags ? { tags: { $in: tags.split(",") } } : {};
+
+    const blogs = await Blog.find(query)
       .sort({ [sort]: -1 })
       .skip((page - 1) * limit)
       .limit(Number(limit));
 
-    const total = await Blog.countDocuments();
+    const total = await Blog.countDocuments(query);
 
     res.status(200).json({
       success: true,
       data: blogs,
       total,
+      page: Number(page),
+      toatalPage: Math.ceil(total / limit),
     });
   } catch (err) {
-    next(err);
+    res.status(500).json({ success: false, message: err.message });
   }
 };
 
-// create new blog
-exports.createBlog = async (req, res, next) => {
+// update post
+exports.updatePost = async (req, res) => {
   try {
-    const { title, content, author, tags } = req.body;
-    const newBlog = await Blog.create({ title, content, author, tags });
-    res.status(201).json({ success: true, data: newBlog });
+    const { _id } = req.params;
+    const { title, content } = req.body;
+
+    const updatedBlogs = await Blog.findByIdAndUpdate(_id, {title, content}, {new: true, runValidators: true});
+
+    if(!updatedBlogs) {
+      return res.status(404).json({ success: false, message: "Blog not found"})
+    }
+
+    res.status(200).json({success: true, message: "Blog updated successfully", blog: updatedBlogs})
+
+
   } catch (err) {
-    next(err);
+    res.status(500).json({ success: false, message: err.message });
   }
 };
 
-// get single blog post
-exports.getBlogById = async (req, res, next) => {
+// transaction handling
+exports.deleteBlog = async (req, res) => {
   try {
-    const blog = await Blog.findById(req.params.id);
-    if (!blog) {
+    const { _id } = req.params;
+
+    const delteBlog = await Blog.findByIdAndDelete(_id);
+
+    if (!delteBlog) {
       return res
         .status(404)
         .json({ success: false, message: "Blog not found" });
     }
 
-    res.status(200).json({ success: true, data: blog });
-  } catch (err) {
-    next(err);
-  }
-};
-
-// update a blog post
-exports.updateBlog = async (req, res, next) => {
-  try {
-    const updateBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
+    res.status(200).json({
+      success: true,
+      message: "Blog deleted successfully",
     });
-    res.status(200).json({ success: true, data: updateBlog });
   } catch (err) {
-    next(err);
-  }
-};
-
-// delete a blog post
-exports.deleteBlog = async (req, res, next) => {
-  try {
-    const deleteBlog = await Blog.findByIdAndDelete(req.params.id);
-    res.status(200).json({ success: true, data: deleteBlog });
-  } catch (err) {
-    next(err);
+    res.status(500).json({ success: false, message: err.message });
   }
 };
