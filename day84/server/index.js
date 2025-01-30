@@ -7,15 +7,15 @@ const postRoutes = require("./routes/postRoutes")
 // express app
 const app = express();
 
+// middleware
+app.use(cors());
+app.use(express.json());
 // Database Connection
 mongoose
   .connect("mongodb://127.0.0.1:27017/blogDB")
   .then(() => console.log("MongoDB Connected!"))
   .catch((err) => console.error("DB Connection Error:", err));
 
-// middleware
-app.use(cors());
-app.use(express.json());
 
 // routes
 app.use("/api", postRoutes);

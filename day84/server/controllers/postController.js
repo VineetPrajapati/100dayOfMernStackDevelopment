@@ -13,17 +13,12 @@ exports.getAllpost = async (req, res) => {
 };
 
 exports.createBlogPost = async (req, res) => {
+  // console.log("Incoming Request Body:", req.body);
   try {
     const { title, content } = req.body;
-    if (!title || !content) {
-      return res
-        .status(400)
-        .json({ message: "Title and content are required!" });
-    }
 
     const newPost = new Post({ title, content });
     // console.log(newPost);
-
     await newPost.save();
     res.status(201).json({ success: true, newPost });
   } catch (err) {
