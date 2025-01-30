@@ -1,4 +1,3 @@
-const { response } = require("express");
 const Post = require("../models/Post");
 
 // fetch all blogs
