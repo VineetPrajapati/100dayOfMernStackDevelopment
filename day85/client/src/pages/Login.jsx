@@ -37,10 +37,22 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button className="bg-blue-500 text-white px-4 py-2 w-72 rounded cursor-pointer hover:bg-blue-600">
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 w-72 rounded cursor-pointer hover:bg-blue-600"
+        >
           Login
         </button>
       </form>
+      <div className="text-center mt-4">
+        <p>Don&apos;t have an account?</p>
+        <button
+          onClick={() => navigate("/register")}
+          className="text-blue-500 hover:underline cursor-pointer"
+        >
+          Register Here
+        </button>
+      </div>
     </div>
   );
 };
