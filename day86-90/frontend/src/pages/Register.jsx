@@ -26,11 +26,11 @@ const Register = () => {
         userData
       );
       dispatch(registerUser(res.data));
-      navigate("/");
+      navigate("/login");
     } catch (err) {
       console.error(
         "Registration failed",
-        err.respone?.data?.message || err.message
+        err.response?.data?.message || err.message
       );
       alert("Registration failed. Try again!");
     }
