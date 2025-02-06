@@ -1,20 +1,24 @@
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../redux/authSlice";
+// import { useDispatch, useSelector } from "react-redux";
+// import { logout } from "../redux/authSlice";
 const Navbar = () => {
-  const dispatch = useDispatch();
-  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  // const dispatch = useDispatch();
+  // const { isAuthenticated, user } = useSelector((state) => state.auth);
 
-  const handleLogout = () => {
-    dispatch(logout());
-    alert("Logged out successfully");
-  };
+  // const handleLogout = () => {
+  //   dispatch(logout());
+  //   alert("Logged out successfully");
+  // };
   return (
-    <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
+    <nav className="bg-blue-600 text-white p-4 flex justify-between items-center mb-8">
       <h1 className="text-xl font-bold">
         <Link to="/">E-Commerce</Link>
       </h1>
-      <div className="space-x-4">
+      <Link to="/add-product" className="bg-green-500 px-3 py-1 rounded">
+        Add Product
+      </Link>
+
+      {/* <div className="space-x-4">
         {isAuthenticated ? (
           <>
             <span>Welcome, {user?.name}!</span>
@@ -31,7 +35,7 @@ const Navbar = () => {
           <Link to="/register" className="bg-yellow-500 px-3 py-1 rounded">Register</Link>
           </>
         )}
-      </div>
+      </div> */}
     </nav>
   );
 };
