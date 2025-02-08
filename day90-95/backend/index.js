@@ -6,6 +6,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 //
 import connectDB from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js"
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use(cookieParser());
 
 // Routes
 app.get("/", (req, res) => res.send("Project set-up done👍🏼"));
+
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
