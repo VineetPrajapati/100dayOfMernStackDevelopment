@@ -26,7 +26,7 @@ const Register = () => {
       onSubmit={handleSubmit}
       className="max-w-sm mx-auto mt-12 p-4 border rounded shadow-md"
     >
-      <h1>Register</h1>
+      <h1 className="text-xl font-bold">Register</h1>
       <input
         type="text"
         name="name"
